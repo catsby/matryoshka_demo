@@ -1,8 +1,16 @@
-%p#notice= notice
-
 %p
   %b Name:
   = @project.name
+
+%p
+  %b Description:
+  = @project.description
+
+%p 
+  %b Lists:
+  %br
+  - @project.lists.each do |list|
+    = render partial: 'projects/list', object: list
 
 = link_to 'Edit', edit_project_path(@project)
 \|

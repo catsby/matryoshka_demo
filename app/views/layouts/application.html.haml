@@ -11,9 +11,18 @@
   %body
     #container.container
       %header
+        random: 
+        %strong= rand(900)+100
+        %br
+        %p#notice= notice
       #main{:role => "main"}
         = yield
       #sidebar
+        %h2 Nav
+        %ul
+          %li= link_to 'Home', root_path
+          %li= link_to 'Projects', projects_path
+          %li= link_to 'Lists', lists_path
+          %li= link_to 'Todos', todos_path
         %h2 Lists stuff
       %footer
-        wtf

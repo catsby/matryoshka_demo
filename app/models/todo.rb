@@ -1,4 +1,5 @@
 class Todo < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :subject, :title
+  belongs_to :list
+  attr_accessible :subject, :title, :list_id
 end

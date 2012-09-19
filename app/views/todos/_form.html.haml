@@ -10,10 +10,10 @@
     = f.label :title
     %br
     = f.text_field :title
-  .field
-    = f.label :user
+  .field 
+    = f.label :list
     %br
-    = f.text_field :user
+    = f.collection_select :list_id, List.all, :id, :title
   .field
     = f.label :subject
     %br

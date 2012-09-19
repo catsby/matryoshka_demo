@@ -8,6 +8,12 @@
 
   .field
     = f.label :project
-    = f.text_field :project
+    = f.collection_select :project_id, Project.all, :id, :name
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
   .actions
     = f.submit 'Save'

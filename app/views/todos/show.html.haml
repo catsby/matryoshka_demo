@@ -1,4 +1,4 @@
-%h1= t '.title'
+%h1= @todo.title
 %p
   = link_to t('back'), todos_path
   = link_to t('edit'), edit_todo_path(@todo)
