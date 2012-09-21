@@ -1,17 +1,17 @@
-%p
-  %b Name:
-  = @project.name
+- cache ['v1', @project] do 
+  .project
+    %p
+      %h2= @project.name
+    = timeago
 
-%p
-  %b Description:
-  = @project.description
+    %p
+      %h2 Description
+      = @project.description
 
-%p 
-  %b Lists:
-  %br
-  - @project.lists.each do |list|
-    = render partial: 'projects/list', object: list
+    %p 
+      %h2 Lists
+      = render partial: 'projects/list', collection: @project.lists
 
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+    = link_to 'Edit', edit_project_path(@project)
+    \|
+    = link_to 'Back', projects_path

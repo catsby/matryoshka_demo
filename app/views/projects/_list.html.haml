@@ -1,3 +1,9 @@
-%b= link_to "#{list.title} (#{list.todos.count})", list_path(list)
-%b= list.description
-%br
+- cache ['v1', list] do
+  .project-list
+    %b= link_to "#{list.title} (#{list.todos.count})", list_path(list)
+    = timeago
+    %br
+    = list.description
+
+    = content_tag_for(:ul, list.todos, {class: 'project-todo-list'}) do |todo|
+      = render partial: 'projects/todo', object: todo
