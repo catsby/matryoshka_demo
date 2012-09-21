@@ -2,6 +2,9 @@
   .project
     %p
       %h2= @project.name
+    = link_to 'Edit', edit_project_path(@project)
+    \|
+    = link_to 'Back', projects_path
     = timeago
 
     %p
@@ -12,6 +15,3 @@
       %h2 Lists
       = render partial: 'projects/list', collection: @project.lists
 
-    = link_to 'Edit', edit_project_path(@project)
-    \|
-    = link_to 'Back', projects_path

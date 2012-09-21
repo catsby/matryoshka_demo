@@ -3,10 +3,15 @@
   = link_to t('back'), todos_path
   = link_to t('edit'), edit_todo_path(@todo)
 
-%dl
-  %dt= Todo.human_attribute_name :title
-  %dd= @todo.title
-  %dt= Todo.human_attribute_name :user
-  %dd= @todo.user
-  %dt= Todo.human_attribute_name :subject
-  %dd= @todo.subject
+%p
+  %strong= Todo.human_attribute_name :title
+  %br
+  = @todo.title
+%p
+  %strong= Todo.human_attribute_name :user
+  %br
+  = @todo.user.present? ? @todo.user.name : 'No one is assigned'
+%p
+  %strong= Todo.human_attribute_name :subject
+  %br
+  = @todo.subject

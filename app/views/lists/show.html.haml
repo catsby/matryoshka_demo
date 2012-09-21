@@ -15,6 +15,7 @@
 %h3 Todos
 = content_tag_for(:ul, @list.todos) do |todo|
   %li= link_to todo.title, todo_path(todo)
+  = todo.subject.truncate(40)
 
 = link_to 'Edit', edit_list_path(@list)
 \|
