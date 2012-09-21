@@ -12,17 +12,39 @@
  *= require_tree .
  */
 
-#container {
+body {
   width:960px;
   margin:0 auto;
+}
+#container {
+  background-color: #fffaaa;
+  float: left;
 }
 
 #main {
   float:left;
-  width:720px;
+  width:700px;
+  padding:10px;
 }
 
 #sidebar {
   float:left;
-  width:240px;
+  width:220px;
+  background-color: #aaafff;
+  padding: 10px;
+}
+
+.project-list {
+  margin: 0 0 13px 0;
+  background-color: #affaaf;
+  padding: 13px;
+}
+
+.project-todo {
+  background-color: #afaffa;
+  padding:5px;
+}
+
+.timeago {
+  font-style: italic;
 }
