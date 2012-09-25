@@ -58,8 +58,11 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
 
+    list = @todo.list
+    
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
+        list.touch if list != @todo.list
         format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
         format.json { head :no_content }
       else
