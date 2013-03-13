@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1...5).each do |x|
+  Project.create! name: "Project #{x}"
+end
+
+10.times do |n|
+  puts "n!: #{n}"
+end
+
